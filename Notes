@@ -1,0 +1,29 @@
+main menu buttons
+    Player Vs Player
+        only works off of human input
+        //keeps track of:
+            //Player 1 wins + %
+            //Player 2 wins + %
+            //Draw num + %
+        //new game button
+        //back button
+        //turn indicator
+        //first changer
+    Plaver Vs Computer
+        Vs custom AI
+        hard AI with perfect game
+        med AI that looks at the board and tries to make a good move
+        easy AI that uses the same AI as med but doesnt always make the best move it finds
+        keeps track of:
+            Player wins + %
+            Computer wins + %
+            Draw num + %
+        new game button
+        back button
+        turn indicator
+        first changer
+    Settings
+
+    Exit
+        ...exits
+
