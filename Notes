@@ -27,3 +27,19 @@ main menu buttons
     Exit
         ...exits
 
+
+
+
+Hard AI 
+    Theres two wais i could do it
+    Recursion
+        uses chess bot algerithms to find the best move
+        hard to do
+    If statements
+        uses if statements to prepare for all scenarios
+        mostly done
+        hard to read
+
+
+
+should make it random who goes first + animation

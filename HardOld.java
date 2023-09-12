@@ -25,10 +25,13 @@
  * it takes the middle
  * blocks and checks for win until draw
  */
+
+
+ //need to add if they go center first, go corner
 public class HardOld {
     public static int[] AIPlay(OneSquare[][] g, Board board, int turnNum){
         int[] move = new int[2];
-        if(turnNum % 2 == 0){
+        if(turnNum % 2 == 0){ //figures out whether the AI goes first or second
             move = AIFirst(g, board, turnNum);
         } else {
             move = AISecond(g, board, turnNum);
@@ -36,13 +39,14 @@ public class HardOld {
         return move;
     }
     public static int[] AIFirst(OneSquare[][] g, Board board, int turnNum){
+        //this goes through the various move options
         int[] move = new int[2];
-        if(turnNum == 0){
+        if(turnNum == 0){ //if it's the AI's first move, go in the top left corner
             move[0] = 0;
             move[1] = 0;
-        } else if(turnNum == 2){
-            if(board.isOpen(1, 1)){
-                if(board.isOpen(2, 2)){
+        } else if(turnNum == 2){ //if it's the AI's second move, 
+            if(board.isOpen(1, 1)){ //checks to see if the middle is open
+                if(board.isOpen(2, 2)){ //checks to see if the opp corner is open
                     if(board.isOpen(0, 1) && board.isOpen(0, 2) && board.isOpen(1, 2)){
                         move[0] = 0; 
                         move[1] = 2;
@@ -55,6 +59,7 @@ public class HardOld {
                 } else {
                     move[0] = 2; 
                     move[1] = 0;
+                    System.out.print("tesy Boi");
                     return move;
                 }
             } else {
@@ -72,7 +77,11 @@ public class HardOld {
         if(board.isOpen(1, 1)){
             move[0] = 1;
             move[1] = 1;
-        } else {
+        } else if(turnNum == 3 && (!(board.isOpen(0, 0)&&board.isOpen(2, 2)) || !(board.isOpen(2, 0)&&board.isOpen(0, 2)))){
+            move[0] = 1;
+            move[1] = 0;
+            System.out.print(turnNum);
+        }else{
             move = smartPlay(g, board);
         }
         return move;

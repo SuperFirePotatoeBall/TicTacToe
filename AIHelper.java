@@ -39,6 +39,36 @@ public class AIHelper{
         move[1] = -1;
         return move;
     }
+    public static boolean canWin(OneSquare[][] g, Board board){
+        OneSquare[][] grid;
+        for(int r = 0; r <= 2; r ++){
+            for(int c = 0; c <= 2; c++){
+                grid = copyArray(g);
+                if(board.isOpen(r, c)){
+                    grid[r][c].o();
+                    if(WinChecker.checkWin(grid, "o")){
+                        return(true);
+                    }
+                }
+            }
+        }
+        return(false);
+    }
+    public static boolean canBlock(OneSquare[][] g, Board board){
+        OneSquare[][] grid;
+        for(int r = 0; r <= 2; r ++){
+            for(int c = 0; c <= 2; c++){
+                grid = copyArray(g);
+                if(board.isOpen(r, c)){
+                    grid[r][c].x();
+                    if(WinChecker.checkWin(grid, "x")){
+                        return(true);
+                    }
+                }
+            }
+        }
+        return(false);
+    }
     public static int[] randomMove(Board board){
         int[] place = new int[2];
         place[0] = (int) (Math.random() * 3);

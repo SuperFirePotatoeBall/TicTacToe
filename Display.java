@@ -7,8 +7,8 @@ public class Display{
     public Display(){
         window.setSize(1960, 1020);
         window.setLayout(null);
-        device.setFullScreenWindow(window);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setExtendedState(JFrame.MAXIMIZED_BOTH);
         MainMenu test = new MainMenu();   
         test.start();
     }

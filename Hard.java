@@ -26,7 +26,24 @@
  * blocks and checks for win until draw
  */
 public class Hard{
+    static int round = -1;
+    static int[] move = new int[2];
+
+    static Board[] scenarios = null;
+    scenarios[0] = new Board();
     public static int[] AIPlay(OneSquare[][] g, Board board, int turnNum){
-        
+        round = turnNum/2;
+        return move;
+    }
+
+
+    static public int[] basicChecks(OneSquare[][] g, Board board, int turnNum){
+        if(AIHelper.canWin(g, board)){
+            move = AIHelper.winCheck(g, board);
+        } else if (AIHelper.canBlock(g, board)){
+            move = AIHelper.blockCheck(g, board);
+        }
+        move = new int[] {-1,-1};
+        return move;
     }
 }
